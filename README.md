@@ -1,6 +1,7 @@
 # Histogram Equalization Using OpenCV (Grayscale & Color Images)
 
----
+## Developed by : SANTHOSH KUMAR A
+## Register No  : 212224230250
 
 ## Aim
 
@@ -65,35 +66,64 @@ Merge the channels and convert the image back to BGR format.
 ### Step 11:
 Display original color image, histogram, enhanced image, and enhanced histogram using a 2 × 2 grid.
 
----
+```
+import cv2
+from matplotlib import pyplot as plt
+```
+```
+image = cv2.imread('C:\\Users\\admin\\Downloads\\tiger.png')
+```
+```
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+```
+```
+plt.imshow(gray_image, cmap='gray')
+plt.title('Original Grayscale Image')
+plt.axis('off')
 
-## Program
+print("Name : SANTHOSH KUMAR A")
+print("REG NO: 212224230250")
+```
+```
+hist_original = cv2.calcHist([gray_image], [0], None, [256], [0, 256])
+```
+```
+plt.plot(hist_original, color='black')
+plt.title('Original Histogram')
+plt.xlim([0, 256])
 
-### Developed By:
-**Name:** ____________________________  
+print("Name : SANTHOSH KUMAR A")
+print("REG NO: 212224230250")
+```
+```
+equalized_image = cv2.equalizeHist(gray_image)
+```
+```
+plt.imshow(equalized_image, cmap='gray')
+plt.title('Equalized Image')
+plt.axis('off')
 
-### Register No:
-____________________________  
+print("Name : SANTHOSH KUMAR A")
+print("REG NO: 212224230250")
+```
+```
+hist_equalized = cv2.calcHist([equalized_image], [0], None, [256], [0, 256])
+```
+```
+plt.plot(hist_equalized, color='black')
+plt.title('Equalized Histogram')
+plt.xlim([0, 256])
 
----
-
+print("Name : SANTHOSH KUMAR A")
+print("REG NO: 212224230250")
+```
 ##  Output
+<img width="713" height="529" alt="image" src="https://github.com/user-attachments/assets/6d57dd1c-d120-48d4-821a-3cd5dd687e0a" />
+<img width="757" height="614" alt="image" src="https://github.com/user-attachments/assets/65335fdc-041e-4928-bbfa-092d4875f0f1" />
+<img width="720" height="530" alt="image" src="https://github.com/user-attachments/assets/c0c4fe2e-015d-4eb6-ac87-afe3dbe17410" />
 
-### Grayscale Histogram Equalization
+<img width="734" height="608" alt="image" src="https://github.com/user-attachments/assets/4f35fd27-264d-489c-b8e8-6a6846b6346f" />
 
-- Original grayscale image is displayed  
-- Histogram of original grayscale image is plotted  
-- Enhanced image after histogram equalization is displayed  
-- Histogram of enhanced grayscale image shows improved contrast  
-
-### Color Image Histogram Equalization
-
-- Original color image is displayed  
-- Histogram of B, G, R channels is plotted  
-- Enhanced image after HSV-based equalization is displayed  
-- Histogram of enhanced image shows better intensity distribution  
-
----
 
 ## Result
 
